@@ -6,11 +6,17 @@ With a user-friendly interface and elegant animations, Daily Notes makes managin
 Key Features:
 
 1.Enhanced Security: Protect your confidential and important information using Google authentication and Firebase.
+
 2.Task Management: Create, organize, and prioritize your daily, weekly, or monthly tasks.
+
 3.Horizontal Calendar: Easily visualize upcoming events with an intuitive and interactive calendar.
+
 4.Captivating Animations: Enjoy stunning Lottie animations for an attractive and engaging visual experience.
+
 5.Real-time Sync: Automatically backup your data using the power of Firebase to access it from any device.
+
 6.Intelligent Assistance: Benefit from reminder functionality and notifications to ensure you never miss a beat.
+
 7.Advanced Customization: Personalize your experience by using SVG icons and illustrations to express your creativity.
 
 Whether you need to manage your professional or personal schedule, Daily Notes is the perfect app to accompany you in your daily organization. Never miss an appointment or crucial task again with Daily Notes. Download the app now and discover a new way to stay organized in style."
