@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:horizontal_calendar/horizontal_calendar.dart';
@@ -60,12 +59,9 @@ class _HomePageState extends State<HomePage> {
         sqlDb: sqlDb,
         notes: notes,
       ),
-      AddNotesTab(),
+      const AddNotesTab(),
       const AccountNote(),
     ];
-    DateTime now = DateTime.now();
-    String dayOfWeek = DateFormat('EEEE').format(now);
-    String month = DateFormat('MMM').format(now);
 
     return DefaultTabController(
       length: 4,
@@ -114,7 +110,8 @@ class HomeTab extends StatefulWidget {
 
   final SqlDb sqlDb;
 
-  HomeTab({
+  const HomeTab({
+    super.key,
     required this.notes,
     required this.sqlDb,
   });
@@ -125,7 +122,6 @@ class HomeTab extends StatefulWidget {
 
 class _HomeTabState extends State<HomeTab> {
   late List<Map<String, dynamic>> filteredNotes;
-  final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
   Future<void> showDeleteConfirmationDialog(BuildContext context) async {
     return showDialog<void>(
       context: context,
@@ -294,8 +290,6 @@ class _HomeTabState extends State<HomeTab> {
                                             label: 'Edit',
                                             onPressed:
                                                 (BuildContext context) async {
-                                              print("clicked edit");
-
                                               Navigator.of(context).push(
                                                 MaterialPageRoute(
                                                   builder: (context) =>
@@ -364,6 +358,8 @@ class _HomeTabState extends State<HomeTab> {
 }
 
 class AddNotesTab extends StatelessWidget {
+  const AddNotesTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const AddNotes();
@@ -374,7 +370,8 @@ class FilterListTab extends StatefulWidget {
   final List<Map<String, dynamic>> notes;
   final SqlDb sqlDb;
 
-  FilterListTab({
+  const FilterListTab({
+    super.key,
     required this.notes,
     required this.sqlDb,
   });

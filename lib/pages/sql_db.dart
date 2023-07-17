@@ -26,8 +26,6 @@ class SqlDb {
   }
 
   Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
-    print('onUpgrade =============================');
-
     // Vérifier si la colonne "color" existe déjà
     bool columnExists = await db
         .rawQuery('PRAGMA table_info(notes)')
@@ -48,14 +46,13 @@ class SqlDb {
       "date" TEXT NOT NULL
     )
   ''');
-    print("onCreate =============================");
   }
 
   //** Read data **//
   Future<List<Map<String, dynamic>>> readData(String sql) async {
     Database? mydb = await db;
     List<Map<String, dynamic>> response = await mydb!.rawQuery(sql);
-    print("on Reading ====================");
+
     return response;
   }
 
@@ -90,7 +87,7 @@ class SqlDb {
   Future<List<Map<String, dynamic>>> read(String table) async {
     Database? mydb = await db;
     List<Map<String, dynamic>> response = await mydb!.query(table);
-    print("ON READING =============");
+
     return response;
   }
 
@@ -98,7 +95,7 @@ class SqlDb {
   Future<int> insert(String table, Map<String, Object?> values) async {
     Database? mydb = await db;
     int response = await mydb!.insert(table, values);
-    print("ON INSERT =============");
+
     return response;
   }
 
@@ -114,7 +111,7 @@ class SqlDb {
       values,
       where: mywhere,
     );
-    print("ON UPDATE =============");
+
     return response;
   }
 
@@ -128,14 +125,14 @@ class SqlDb {
       table,
       where: mywhere,
     );
-    print("ON DELETE =============");
+
     return response;
   }
 
   Future<int> deleteAll(String tableName) async {
     Database mydb = await initializeDb();
     int result = await mydb.delete(tableName);
-    print("DELETE ALL ITEM ");
+
     return result;
   }
 }
