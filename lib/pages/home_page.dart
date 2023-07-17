@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
+//apres la modification test git
 class _HomePageState extends State<HomePage> {
   // Déclaration de la variable sqlDb
   List<Map<String, dynamic>> filteredNotes = [];
