@@ -1,11 +1,8 @@
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sqflite_package/firebase/google_sign_in.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
-import 'package:sqflite_package/firebase/logged_in_widget.dart';
-import 'package:sqflite_package/pages/home_page.dart';
 
 class SignUpWidget extends StatelessWidget {
   const SignUpWidget({super.key});
