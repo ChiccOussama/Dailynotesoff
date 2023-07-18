@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:sqflite_package/pages/home_page.dart';
@@ -71,7 +72,18 @@ class _AddNotesState extends State<AddNotes> {
                       if (response > 0) {
                         setState(() {});
 
-                        //print("Succeful ================");
+                        await AwesomeDialog(
+                          context: context,
+                          dialogType: DialogType.success,
+                          animType: AnimType.scale,
+                          title: 'Succesful',
+                          desc: 'La note est bien ajouter',
+                          autoHide: const Duration(seconds: 2),
+                          onDismissCallback: (type) {
+                            debugPrint('Dialog Dissmiss from callback $type');
+                          },
+                        ).show();
+
                         Navigator.of(context).pushAndRemoveUntil(
                           MaterialPageRoute(
                             builder: (context) => const HomePage(),

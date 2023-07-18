@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sqflite_package/firebase/google_sign_in.dart';
 
-class LoggedInWidjet extends StatelessWidget {
+class LoggedInWidjet extends StatefulWidget {
   const LoggedInWidjet({super.key});
 
+  @override
+  State<LoggedInWidjet> createState() => _LoggedInWidjetState();
+}
+
+class _LoggedInWidjetState extends State<LoggedInWidjet> {
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser!;
@@ -84,59 +89,3 @@ class CustomClipperWidget extends CustomClipper<Path> {
     return true;
   }
 }
-/*
-    final user = FirebaseAuth.instance.currentUser!;
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        actions: [
-          IconButton(
-            onPressed: () {
-              final provider =
-                  Provider.of<GoogleSignInProvider>(context, listen: false);
-              provider.logout();
-            },
-            icon: const Icon(
-              Icons.logout_outlined,
-              color: Colors.black,
-            ),
-          )
-        ],
-        centerTitle: true,
-        title: const Text(
-          "Loggot in",
-          style: TextStyle(color: Colors.black),
-        ),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text("Profile"),
-            const SizedBox(
-              height: 30,
-            ),
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: NetworkImage(user.photoURL!),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            Text(
-              "Name : ${user.displayName!}",
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            Text("Email : ${user.email!}"),
-            const SizedBox(
-              height: 30,
-            ),
-          ],
-        ),
-      ),
-    );
-*/
