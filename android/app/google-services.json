@@ -14,7 +14,23 @@
       },
       "oauth_client": [
         {
-          "client_id": "903052913951-gakb2s80q96lv3gg6upmc6r2kmlvr9m3.apps.googleusercontent.com",
+          "client_id": "903052913951-28c6o5t2u954cb8kpub49dbt8hrvvj4h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "at.dailynotesslimani.com",
+            "certificate_hash": "72de901374bf44c56f2ec020b6eded795572a599"
+          }
+        },
+        {
+          "client_id": "903052913951-oisp1pj8fqi5ek3rfbcp4dc3tnkm104q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "at.dailynotesslimani.com",
+            "certificate_hash": "b5147a5588c152c26df0c7cb4ec5fdc11573b190"
+          }
+        },
+        {
+          "client_id": "903052913951-q0ikllm4g4lf2vm59rgsosj51h9qlk6m.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "at.dailynotesslimani.com",
