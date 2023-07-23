@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
 import 'package:intl/intl.dart';
 import 'package:sqflite_package/pages/home_page.dart';
 import 'package:sqflite_package/pages/sql_db.dart';
@@ -61,7 +62,9 @@ class _AddNotesState extends State<AddNotes> {
                 ),
                 const SizedBox(height: 16),
                 const SizedBox(height: 16),
-                ElevatedButton(
+                ButttonWithIcon(
+                  icon: Icons.add_task,
+                  title: "Add Notes",
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       int response = await sqlDb.insert("notes", {
@@ -96,14 +99,6 @@ class _AddNotesState extends State<AddNotes> {
                       }
                     }
                   },
-                  child: const Text(
-                    "+ Add Notes",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  ),
                 ),
               ],
             ),
