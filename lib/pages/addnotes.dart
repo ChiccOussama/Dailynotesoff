@@ -1,8 +1,9 @@
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:sqflite_package/pages/home_page.dart';
 import 'package:sqflite_package/pages/sql_db.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class AddNotes extends StatefulWidget {
   const AddNotes({Key? key}) : super(key: key);
@@ -13,10 +14,10 @@ class AddNotes extends StatefulWidget {
 
 class _AddNotesState extends State<AddNotes> {
   final SqlDb sqlDb = SqlDb();
-
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _noteController = TextEditingController();
   final TextEditingController _titleController = TextEditingController();
+  AudioCache audioCache = AudioCache(); // Nouveau - Initialisation d'AudioCache
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +71,9 @@ class _AddNotesState extends State<AddNotes> {
                       });
 
                       if (response > 0) {
+                        //*Play audio
+                        final player = AudioPlayer();
+                        player.play(AssetSource('audio/shortsuccesaudio.mp3'));
                         setState(() {});
 
                         await AwesomeDialog(
@@ -77,13 +81,12 @@ class _AddNotesState extends State<AddNotes> {
                           dialogType: DialogType.success,
                           animType: AnimType.scale,
                           title: 'Succesful',
-                          desc: 'La note est bien ajouter',
+                          desc: 'La note est bien ajoutée',
                           autoHide: const Duration(seconds: 2),
                           onDismissCallback: (type) {
-                            debugPrint('Dialog Dissmiss from callback $type');
+                            debugPrint('Dialog Dismiss from callback $type');
                           },
                         ).show();
-
                         Navigator.of(context).pushAndRemoveUntil(
                           MaterialPageRoute(
                             builder: (context) => const HomePage(),
