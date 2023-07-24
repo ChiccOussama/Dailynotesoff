@@ -65,6 +65,7 @@ class _AddNotesState extends State<AddNotes> {
                 ButttonWithIcon(
                   icon: Icons.add_task,
                   title: "Add Notes",
+                  buttonColor: Colors.teal[400],
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       int response = await sqlDb.insert("notes", {

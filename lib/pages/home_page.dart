@@ -69,13 +69,13 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.yellow,
+          backgroundColor: Colors.teal[400],
           elevation: 0,
           centerTitle: true,
           title: const Text(
             "Daily Notes",
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: 30,
             ),
@@ -84,16 +84,16 @@ class _HomePageState extends State<HomePage> {
             indicatorColor: Colors.black,
             tabs: <Widget>[
               Tab(
-                child: Icon(Icons.home, color: Colors.black),
+                child: Icon(Icons.home, color: Colors.white),
               ),
               Tab(
-                child: Icon(Icons.filter_list, color: Colors.black),
+                child: Icon(Icons.filter_list, color: Colors.white),
               ),
               Tab(
-                child: Icon(Icons.add_box, color: Colors.black),
+                child: Icon(Icons.add_box, color: Colors.white),
               ),
               Tab(
-                child: Icon(Icons.person_2_rounded, color: Colors.black),
+                child: Icon(Icons.person_2_rounded, color: Colors.white),
               ),
             ],
           ),
@@ -352,6 +352,10 @@ class _HomeTabState extends State<HomeTab> {
               ],
             ),
           ),
+          /* Container(
+            height: 50,
+            color: Colors.red,
+          ),*/
         ],
       ),
     );

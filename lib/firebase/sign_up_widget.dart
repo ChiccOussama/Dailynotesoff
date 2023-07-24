@@ -58,8 +58,8 @@ class SignUpWidget extends StatelessWidget {
                     Provider.of<GoogleSignInProvider>(context, listen: false);
                 provider.googleLogin();
               },
-              buttonColor: Colors.yellow,
-              fontColor: Colors.black,
+              buttonColor: Colors.teal[400],
+              fontColor: Colors.white,
             ),
           ),
         ],
